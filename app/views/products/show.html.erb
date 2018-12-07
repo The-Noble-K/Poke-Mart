@@ -1,39 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= number_to_currency @product.price %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @product.quantity %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @product.brand %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @product.rating %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.category_id %>
-</p>
+<div class="well">
+  <center>
+  <strong><h2><%= @product.name %></h2></strong>
+  <div>
+  <% if @product.image.url != nil %>
+    <%= image_tag @product.image.url, size: 85 %>
+  <% end %>
+  </div>
+  <h3><%= number_to_currency @product.price %></h3>
+  </center>
+  <h4>Quantity:</h4>
+  <p><%= @product.quantity %></p>
+  <h4>Description:</h4>
+  <p><%= @product.description %></p>
+  <h4>Brand:</h4>
+  <p><%= @product.brand %></p>
+  <h4>Rating:</h4>
+  <p><%= @product.rating %></p>
+  <h4>Category:</h4>
+  <p><%= @product.category_id %></p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

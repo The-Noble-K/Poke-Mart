@@ -7,5 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 categories = Category.create([{name: 'Poke-Balls'},
                               {name: 'Potions'},
+                              {name: 'Evolution Stones'},
+                              {name: 'Evolution Items'},
                               {name: 'Items'},
                               {name: 'Other'}])
