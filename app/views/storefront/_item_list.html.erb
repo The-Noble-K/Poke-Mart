@@ -10,10 +10,16 @@
         <% end %>
         </div>
         <h3><%= number_to_currency product.price %></h3>
-        </center>
         <a href="#" data-toggle="modal" data-target="#myModal_<%= product.id %>">
-          <span class="glyphicon glyphicon-plus"></span>Quick Info
+          <span class="glyphicon glyphicon-plus"></span>More Info
         </a>
+        <br />
+        <%= form_tag add_to_cart_path do %>
+          <%= hidden_field_tag :product_id, product.id %>
+          <%= number_field_tag :quantity, nil, placeholder: "How Many?" %>
+          <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
+        <% end %>
+        </center>
       </div>
     </div>
 
@@ -36,6 +42,13 @@
             </center>
           </div>
           <div class="modal-footer">
+            <center>
+            <%= form_tag add_to_cart_path do %>
+              <%= hidden_field_tag :product_id, product.id %>
+              <%= number_field_tag :quantity, nil, placeholder: "How Many?" %>
+              <%= submit_tag "Add to Cart", class: "btn btn-primary" %>
+            <% end %>
+            </center>
           </div>
         </div>
       </div>

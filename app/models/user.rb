@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   mount_uploader :avatar, AvatarUploader
+
+  has_many :orders
+
+  def admin?
+    return role = "admin"
+  end
 end

@@ -9,7 +9,7 @@
   <% end %>
   </div>
   <h3><%= number_to_currency @product.price %></h3>
-  </center>
+
   <h4>Quantity:</h4>
   <p><%= @product.quantity %></p>
   <h4>Description:</h4>
@@ -23,3 +23,4 @@
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+  </center>

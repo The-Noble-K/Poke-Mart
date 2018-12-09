@@ -1,0 +1,8 @@
+<h2>Purchase Summary</h2>
+
+<% @product_names.length.times do |index| %>
+  <%= @product_names[index] %>, <%= @product_quantities[index] %><br />
+<% end %>
+<br />
+
+Order Total: <%= number_to_currency @order.grand_total %>
