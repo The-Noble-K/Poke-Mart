@@ -1,6 +1,6 @@
 <h2>My Cart</h2>
 
-<% @line_item.each do |line_item| %>
+<% @line_items.each do |line_item| %>
   <%= line_item.product.name %><br />
   <%= number_to_currency line_item.product.price %><br />
   Qty: <%= line_item.quantity %><br />

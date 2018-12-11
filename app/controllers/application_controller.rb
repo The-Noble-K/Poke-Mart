@@ -1,5 +1,14 @@
 class ApplicationController < ActionController::Base
   before_action :categories, :brands
+  helper_method :current_order
+
+  def current_order
+    if !session[:order_id].nil?
+      return Order.find(session[:order_id])
+    else
+      return Order.new
+    end
+  end
 
   def categories
     @categories = Category.all

@@ -48,9 +48,9 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li id="white_text"><%= link_to "View Cart", view_order_path %></li>
+            <li><%= link_to "View Cart", view_order_path %></li>
             <% if user_signed_in? == false %>
-              <li id="white_text"><%= link_to "Sign In", new_user_session_path %></li>
+              <li><%= link_to "Sign In", new_user_session_path %></li>
             <% end %>
 
             <% if user_signed_in? %>
