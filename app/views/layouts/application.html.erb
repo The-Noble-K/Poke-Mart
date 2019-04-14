@@ -15,18 +15,22 @@
 
   <body>
 
+
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <%= link_to "Home", root_path, class: "navbar-brand" %>
+          <%= link_to " Home ", root_path, class: "navbar-brand" %>
+
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
+            
+            <%= link_to "All Products Table", products_path, class: "navbar-brand" %>
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="white_text">
-                Categories<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Categories <span class="caret"> </span> </a>
               <ul class="dropdown-menu">
                 <% @categories.each do |category| %>
                   <li><%= link_to category.name, categorical_path(category_id: category.id) %></li>
@@ -35,22 +39,22 @@
             </li>
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="white_text">
-                Brands <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Brands <span class="caret"> </span> </a>
               <ul class="dropdown-menu">
                 <% @brands.each do |brand| %>
-                  <li id="white_text"><%= link_to brand, branding_path(brand: brand) %></li>
+                  <li><%= link_to brand, branding_path(brand: brand) %></li>
                 <% end %>
               </ul>
             </li>
 
-            <li id="white_text"><%= link_to "All Products Table", products_path %></li>
+
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "View Cart", view_order_path %></li>
+            <li><%= link_to "View Cart", view_order_path, class: "navbar-brand" %></li>
             <% if user_signed_in? == false %>
-              <li><%= link_to "Sign In", new_user_session_path %></li>
+              <li><%= link_to "Sign In", new_user_session_path, class: "navbar-brand" %></li>
             <% end %>
 
             <% if user_signed_in? %>
@@ -61,15 +65,16 @@
                   <% end %>
                   <%= current_user.username %> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li id="white_text"><%= link_to "Edit Profile", edit_user_registration_path %></li>
-                  <li id="white_text"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
             <% end %>
           </ul>
         </div>
-      </div>
+        </div>
     </nav>
+
 
   	<div class="container">
       <%= yield %>

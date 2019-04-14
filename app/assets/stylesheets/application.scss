@@ -36,44 +36,35 @@
 .navbar {
   background-color: red;
   color: white !important;
-}
-
-#white_text {
-  background-color: red;
-  color: white;
-}
-
-.dropdown-menu {
-  background-color: red;
-  color: white;
-}
-
-.dropdown-toggle {
-  background-color: red;
-  color: white;
-}
-
-.navbar-default {
-  background-color: red !important;
-  color: white !important;
-}
-
-.container-fluid {
-  background-color: red !important;
-  color: white !important;
-}
-
-.navbar-header {
-  background-color: red !important;
-  color: white !important;
-}
-
-h6 {
-  background-color: red !important;
-  color: white !important;
+  font-size: 18px !important;
 }
 
 .navbar-brand {
-    background-color: red;
-    color: white;
+  background-color: red !important;
+  color: white !important;
+  font-size: 18px !important;
+}
+
+.navbar a:hover {
+  background-color: white !important;
+  color: black !important;
+  font-size: 18px !important;
+}
+
+.navbar-brand a:hover {
+  background-color: white !important;
+  color: black !important;
+  font-size: 18px !important;
+}
+
+.dropdown a {
+  background-color: red !important;
+  color: white !important;
+  font-size: 18px !important;
+}
+
+.dropdown a:hover {
+  background-color: white !important;
+  color: black !important;
+  font-size: 18px !important;
 }
